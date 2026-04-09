@@ -1,18 +1,28 @@
 import { useEffect, useState } from "react";
 import type { Todo } from "../types/todo";
-import { loadTodos } from "../storage/chromeStorage";
+import { loadTodos, saveTodos } from "../storage/chromeStorage";
 
 function useTodos() {
     const [todos, setTodos] = useState<Todo[]>([]);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     
     useEffect(() => {
         const init = async () => {
             const todos = await loadTodos();
             setTodos(todos);
+            setIsLoaded(true);
         };
         init();
     }, []);
+
+    useEffect(() => {
+        if (!isLoaded) {
+            return;
+        }
+
+        void saveTodos(todos);
+    }, [isLoaded, todos]);
 
     const addTodo = (content: string, dueDate: string | null) => {
         const newTodo: Todo = {
