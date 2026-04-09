@@ -8,6 +8,7 @@ export default defineConfig({
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
+  publicDir: 'public',  // 이미 있을 수도 있음
   build: {
     rollupOptions: {
       input: {
