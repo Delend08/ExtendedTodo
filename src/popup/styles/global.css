@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;500;700&display=swap");
 
 :root {
-	--surface: #fffdf9;
-	--surface-2: #fff3e0;
+	--surface: #f4fffd;
+	--surface-2: #d9fff6;
 	--surface-3: #ffffff;
-	--ink: #2f2a26;
-	--ink-muted: #71675e;
-	--brand: #e86f3e;
-	--brand-strong: #cc5a2c;
-	--danger: #cf3a2f;
-	--line: #f0d8c9;
-	--ring: rgba(232, 111, 62, 0.35);
-	--shadow: 0 16px 36px rgba(139, 83, 47, 0.16);
+	--ink: #13394a;
+	--ink-muted: #4f7484;
+	--brand: #1db7b3;
+	--brand-strong: #148ea6;
+	--danger: #2e7aa8;
+	--line: #b8ece4;
+	--ring: rgba(29, 183, 179, 0.35);
+	--shadow: 0 16px 36px rgba(30, 104, 127, 0.16);
 }
 
 * {
@@ -22,25 +22,28 @@ html,
 body,
 #root {
 	margin: 0;
-	min-width: 320px;
-	min-height: 100%;
+	width: 380px;
+	height: 560px;
 }
 
 body {
 	font-family: "Noto Sans KR", sans-serif;
 	color: var(--ink);
 	background:
-		radial-gradient(circle at 10% -30%, #ffd8a8 0%, transparent 52%),
-		radial-gradient(circle at 100% 0%, #ffe8cc 0%, transparent 44%),
-		linear-gradient(160deg, #fffaf3 0%, #fff4e9 100%);
+		radial-gradient(circle at 10% -30%, #9ff5ea 0%, transparent 52%),
+		radial-gradient(circle at 100% 0%, #c9f8ff 0%, transparent 44%),
+		linear-gradient(160deg, #effefc 0%, #e6f8ff 100%);
 }
 
 .app-shell {
-	width: min(440px, 100vw);
+	width: 100%;
+	height: 100%;
 	margin: 0 auto;
 	padding: 14px 14px 16px;
 	display: grid;
+	grid-template-rows: auto 1fr;
 	gap: 12px;
+	overflow: hidden;
 }
 
 .app-header {
@@ -75,11 +78,14 @@ body {
 	box-shadow: var(--shadow);
 	padding: 12px;
 	animation: fade-up 460ms ease both;
+	min-height: 0;
 }
 
 .view-main {
 	display: grid;
+	grid-template-rows: 1fr auto;
 	gap: 12px;
+	min-height: 0;
 }
 
 .view-title {
@@ -100,7 +106,10 @@ body {
 	padding: 0;
 	list-style: none;
 	display: grid;
+	align-content: start;
 	gap: 9px;
+	overflow-y: auto;
+	padding-right: 2px;
 }
 
 .todo-item {
@@ -149,11 +158,11 @@ body {
 
 .todo-item.is-complete .todo-content {
 	text-decoration: line-through;
-	color: #9a8f85;
+	color: #7a97a4;
 }
 
 .todo-item.is-complete {
-	background: #fff8ef;
+	background: #f2fcff;
 }
 
 .todo-form {
@@ -221,13 +230,13 @@ body {
 }
 
 .btn-subtle {
-	background: #fce7d7;
-	color: #7f3f22;
+	background: #d9f5fb;
+	color: #1d607f;
 }
 
 .btn-danger {
-	background: #ffd9d4;
-	color: #7d1811;
+	background: #d4ecff;
+	color: #1d5780;
 }
 
 @media (max-width: 420px) {
