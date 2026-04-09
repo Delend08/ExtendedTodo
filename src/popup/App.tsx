@@ -1,14 +1,9 @@
-import '../styles/App.css'
-import TodoInput from "./component/TodoInput";
-import TodoList from "./component/TodoList";
+// TODO: 뷰 전환 (main / create) + useTodos 연결
 
 export default function App() {
-  
   return (
-    <div className="container">
-      <h1 className="title">Extended Todo</h1>
-      <TodoInput />
-      <TodoList />
+    <div>
+      <h1>Extended Todo</h1>
     </div>
-  )
+  );
 }
