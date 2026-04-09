@@ -2,7 +2,8 @@
 
 function Header() {
     return (
-        <header>
+        <header className="app-header">
+            <p className="app-eyebrow">Today Planner</p>
             <h1>Extended Todo</h1>
         </header>
     );

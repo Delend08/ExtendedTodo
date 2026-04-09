@@ -10,11 +10,11 @@ interface TodoListProps {
 
 function TodoList({ todos, onToggle, onDelete, onUpdate }: TodoListProps) {
     if (todos.length === 0) {
-        return <p>아직 등록된 할 일이 없어요.</p>;
+        return <p className="empty-state">아직 등록된 할 일이 없어요.</p>;
     }
 
     return (
-        <ul>
+        <ul className="todo-list">
             {todos.map((todo) => (
                 <TodoItem
                     key={todo.id}

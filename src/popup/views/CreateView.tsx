@@ -33,12 +33,13 @@ function CreateView({ onSubmit, onCancel, initialTodo, title, submitLabel }: Cre
 	};
 
 	return (
-		<main>
-			<h2>{title}</h2>
-			<form onSubmit={handleSubmit}>
-				<div>
+		<main className="view view-create">
+			<h2 className="view-title">{title}</h2>
+			<form className="todo-form" onSubmit={handleSubmit}>
+				<div className="field-group">
 					<label htmlFor="todo-content">할 일 내용</label>
 					<input
+						className="field-input"
 						id="todo-content"
 						type="text"
 						value={content}
@@ -47,9 +48,10 @@ function CreateView({ onSubmit, onCancel, initialTodo, title, submitLabel }: Cre
 					/>
 				</div>
 
-				<div>
+				<div className="field-group">
 					<label htmlFor="todo-due-date">마감일</label>
 					<input
+						className="field-input"
 						id="todo-due-date"
 						type="date"
 						value={dueDate}
@@ -57,10 +59,12 @@ function CreateView({ onSubmit, onCancel, initialTodo, title, submitLabel }: Cre
 					/>
 				</div>
 
-				<button type="submit">{submitLabel}</button>
-				<button type="button" onClick={onCancel}>
-					취소
-				</button>
+				<div className="form-actions">
+					<button type="submit" className="btn btn-primary">{submitLabel}</button>
+					<button type="button" className="btn btn-subtle" onClick={onCancel}>
+						취소
+					</button>
+				</div>
 			</form>
 		</main>
 	);

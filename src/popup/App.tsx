@@ -39,7 +39,7 @@ export default function App() {
   };
 
   return (
-    <>
+    <div className="app-shell">
       <Header />
       {viewMode === "main" ? (
         <MainView
@@ -58,6 +58,6 @@ export default function App() {
           onCancel={handleCancel}
         />
       )}
-    </>
+    </div>
   );
 }

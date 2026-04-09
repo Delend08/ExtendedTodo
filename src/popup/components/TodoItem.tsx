@@ -23,22 +23,25 @@ const formatDueDate = (dueDate: string | null): string => {
 
 function TodoItem({ todo, onToggle, onDelete, onUpdate }: TodoItemProps) {
     return (
-        <li>
-            <label>
+        <li className={`todo-item ${todo.isCompleted ? "is-complete" : ""}`}>
+            <label className="todo-main">
                 <input
+                    className="todo-checkbox"
                     type="checkbox"
                     checked={todo.isCompleted}
                     onChange={() => onToggle(todo.id)}
                 />
-                <span>{todo.content}</span>
+                <span className="todo-content">{todo.content}</span>
             </label>
-            <span>{formatDueDate(todo.dueDate)}</span>
-            <button type="button" onClick={() => onUpdate(todo)}>
-                수정
-            </button>
-            <button type="button" onClick={() => onDelete(todo.id)}>
-                삭제
-            </button>
+            <span className="todo-due-date">{formatDueDate(todo.dueDate)}</span>
+            <div className="todo-actions">
+                <button type="button" className="btn btn-subtle" onClick={() => onUpdate(todo)}>
+                    수정
+                </button>
+                <button type="button" className="btn btn-danger" onClick={() => onDelete(todo.id)}>
+                    삭제
+                </button>
+            </div>
         </li>
     );
 }

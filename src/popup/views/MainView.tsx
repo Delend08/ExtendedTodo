@@ -11,14 +11,14 @@ interface MainViewProps {
 
 function MainView({ todos, onCreate, onToggle, onDelete, onUpdate }: MainViewProps) {
 	return (
-		<main>
+		<main className="view view-main">
 			<TodoList
 				todos={todos}
 				onToggle={onToggle}
 				onDelete={onDelete}
 				onUpdate={onUpdate}
 			/>
-			<button type="button" onClick={onCreate}>
+			<button type="button" className="btn btn-primary" onClick={onCreate}>
 				할 일 작성하기
 			</button>
 		</main>
